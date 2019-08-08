@@ -9,11 +9,7 @@ class  Scene extends React.Component{
         
     }
     
-    //make an api call to get story data
-    DataApi() {
-           
-        
-    }
+    
     //after component renders call api and fetch the info 
     componentDidMount() {
         

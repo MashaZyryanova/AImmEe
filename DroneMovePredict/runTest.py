@@ -11,7 +11,7 @@ RETRAINED_GRAPH_PB_FILE_LOC = os.getcwd() + "/" + "retrained_graph.pb"
 DATA_DIR = os.getcwd() + "/drone"
 
 workspace = fdc.Workspace('7#ogORpZ1j9CRAT$-AYVoG4SgVXnkjf&rC6Xg2kADk^ece-_gM9X5bp1HXA%%C!S' )
-runId = 'b6de5fe1-6cd3-4217-a0cd-37d5e3133213'
+runId = ''
 classifications = ['fire','nofire']
 
 # Move left once to get MOVE_RESULT in order to start the loop
@@ -123,10 +123,11 @@ while(run):
     if(move_result['success']== False):
         run = False
         #if can't move up anymore, write data to a file and exit
-        #json.dumps(results)
-        print("WWwwWWWWWWWWWWwwwwwwwwwwwwwwwwwwwwriting data to file")
-        # with open('data.json', 'w') as json_file:
-        #     json.dump(results, json_file)
+        results =np.array(results).tolist()
+        json_string=json.dumps(results)
+        print("writing data to file. Drone on the left")
+        with open('data.json', 'w') as json_file:
+            json.dump(json_string, json_file)
         workspace.directrun_end(runId)
     else:
         
@@ -211,10 +212,11 @@ while(run):
         move_result = workspace.directrun_move_up(runId)
         if(move_result['success'] == False):
             run = False
-            results=json.dumps(results)
-            print("writing data to file")
+            results =np.array(results).tolist()
+            json_string=json.dumps(results)
+            print("writing data to a file. Drone on the right")
             with open('data.json', 'w') as json_file:
-                json.dump(results, json_file)
+                json.dump(json_string, json_file)
             workspace.directrun_end(runId)
         else:
             row+=1

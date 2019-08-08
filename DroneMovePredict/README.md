@@ -1,4 +1,4 @@
-If you want to retrain the model using your date run retrain.py
+If you want to retrain the model using your data run retrain.py
 Create follwoing folders before start:
 -training_images (inside training images create subfolders to hold differenta classes of data, for examples when I trained the model I used to folders named "fire" and "nofire" that contained corresponding images. I had roughly 500 images in each folder
 -test_images

@@ -1,5 +1,4 @@
 # retrain.py
-#
 # original file by Google:
 # https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py
 
@@ -27,15 +26,13 @@ MIN_NUM_IMAGES_REQUIRED_FOR_TRAINING = 10
 MIN_NUM_IMAGES_SUGGESTED_FOR_TRAINING = 100
 
 MIN_NUM_IMAGES_REQUIRED_FOR_TESTING = 3
-
 MAX_NUM_IMAGES_PER_CLASS = 2 ** 27 - 1  # ~134M
 
 # path to folders of labeled images
 TRAINING_IMAGES_DIR = os.getcwd() + '/training_images'
-
 TEST_IMAGES_DIR = os.getcwd() + "/test_images/"
 
-# where to save the trained graph
+# where to save the trained model
 OUTPUT_GRAPH = os.getcwd() + '/' + 'retrained_graph.pb'
 
 # where to save the intermediate graphs
@@ -52,7 +49,7 @@ TENSORBOARD_DIR = os.getcwd() + '/' + 'tensorboard_logs'
 
 # how many training steps to run before ending
 # NOTE: original Google default is 4000, use 4000 (or possibly higher) for production grade results
-HOW_MANY_TRAINING_STEPS=500
+HOW_MANY_TRAINING_STEPS=700
 
 # how large a learning rate to use when training
 LEARNING_RATE = 0.01

@@ -12,7 +12,7 @@ class  AIboard extends React.Component{
         };
     }
     
-    //make an api call to get story data
+    //to do
     DataApi() {
            
         
